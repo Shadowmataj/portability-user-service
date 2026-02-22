@@ -32,10 +32,11 @@ build/
 ### VS Code ###
 .vscode/
 
+### Environment files ###
+.env
+.env.*
 
-
-*application.properties
-*application.yml
-*application.yaml
+### Other files ###
+docker-compose-development.yml
 logs
 .mvn
