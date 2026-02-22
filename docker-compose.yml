@@ -5,13 +5,9 @@ services:
       dockerfile: Dockerfile
     container_name: users-service
     ports:
-      - "${SERVER_PORT:-8084}:${SERVER_PORT:-8084}"
-    environment:
-      - PORT=${PORT}
-      - DB_URL=${DB_URL}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      - "${PORT:-8081}:${PORT:-8081}"
+    env_file:
+      - .env
     volumes:
       - ./logs:/app/logs
     restart: unless-stopped
