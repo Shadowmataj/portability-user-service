@@ -21,6 +21,9 @@ WORKDIR /app
 # Copy the jar from build stage
 COPY --from=build /app/target/*.jar app.jar
 
+# Set Spring profile to production
+ENV SPRING_PROFILES_ACTIVE=prod
+
 # Expose the application port
 EXPOSE 8765
 
